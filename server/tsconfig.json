@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    /* 1. Basic Path Setup */
+    "rootDir": "./src",           /* Where your .ts files are */
+    "outDir": "./dist",           /* Where the compiled .js files go */
+
+    /* 2. Module Configuration (The Fix) */
+    "module": "commonjs",         /* Converts 'import' to 'require' for Node.js */
+    "moduleResolution": "node",   /* Standard Node.js file finding logic */
+    "target": "es2016",           /* JavaScript version to output */
+
+    /* 3. Interoperability (Crucial for Express/Cors) */
+    "esModuleInterop": true,      /* Allows 'import express from "express"' */
+    "allowSyntheticDefaultImports": true,
+
+    /* 4. Strict Type Checking (Safety) */
+    "strict": true,               /* Enable all strict type-checking options */
+    "noImplicitAny": true,        /* Error on variables with 'any' type */
+    "skipLibCheck": true,         /* Skip type checking of declaration files */
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],        /* Only compile files in src */
+  "exclude": ["node_modules"]     /* Ignore library files */
+}
