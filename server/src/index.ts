@@ -11,7 +11,7 @@ app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => {
-    res.json({ message: "Hello from TypeScript Backend!" });
+    res.json({ message: "Hello from Backend!" });
 });
 
 app.listen(PORT, () => {
