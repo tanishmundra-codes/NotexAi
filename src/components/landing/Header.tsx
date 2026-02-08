@@ -25,18 +25,15 @@ export function Header() {
 
   return (
     <>
-      {/* This is the "Floating" container. 
-        It sits fixed at the top but adds padding so the bar doesn't touch the edge.
-      */}
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 md:p-6 pointer-events-none">
         <motion.header
           className={`pointer-events-auto flex items-center justify-between gap-6 px-6 py-3 rounded-full border transition-all duration-300 ${scrolled
             ? "bg-white/70 dark:bg-[#1D1D1D]/70 backdrop-blur-xl border-black/10 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20 w-auto"
             : "bg-white/50 dark:bg-[#1D1D1D]/50 backdrop-blur-sm border-transparent w-full max-w-5xl"
             }`}
-          initial={{ y: -100, opacity: 0 }}
+          initial={{ opacity: 0, y: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5 }}
         >
           {/* 1. Logo (Left) */}
           <Link href="/" className="flex items-center gap-2 pr-4">
