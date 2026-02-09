@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { SignInButton } from "@/components/auth/SignInButton";
 import { ThemeToggle } from "../ThemeToggle";
 
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
