@@ -2,6 +2,7 @@
 @plugin "tailwindcss-animate";
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
+
 /* 1. CUSTOM FONTS */
 @font-face {
   font-family: "Excon";
@@ -21,6 +22,13 @@
   font-family: "Satoshi";
   src: url("/fonts/satoshi.woff2") format("woff2");
   font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cal Sans";
+  src: url("/font/CalSans-Regular.woff2") format("woff2");
+  font-weight: 600;
   font-display: swap;
 }
 
@@ -107,4 +115,36 @@
   --font-excon: "Excon", sans-serif;
   --font-ranade: "Ranade", sans-serif;
   --font-satoshi: "Satoshi", sans-serif;
+  --font-cal-sans: "Cal Sans", sans-serif;
+}
+
+/* 4. CUSTOM ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  /* meaningful initial state */
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
 }
