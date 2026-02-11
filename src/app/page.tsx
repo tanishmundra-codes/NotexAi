@@ -1,6 +1,7 @@
 import { Header } from '../components/landing/Header';
 import Hero  from '../components/landing/Hero';
 import {About} from '../components/landing/About';
+import {Features} from '../components/landing/Features';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <Features />
     </main>
   );
 }

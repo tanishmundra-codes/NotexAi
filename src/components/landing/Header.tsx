@@ -30,9 +30,9 @@ export function Header() {
             ? "bg-white/70 dark:bg-[#1D1D1D]/70 backdrop-blur-xl border-black/10 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20 w-auto"
             : "bg-white/50 dark:bg-[#1D1D1D]/50 backdrop-blur-sm border-transparent w-full max-w-5xl"
             }`}
-          initial={{ y: -100, opacity: 0 }}
+          initial={{ y: 0, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* 1. Logo (Left) */}
           <Link href="/" className="flex items-center gap-2 pr-1 md:pr-4">
