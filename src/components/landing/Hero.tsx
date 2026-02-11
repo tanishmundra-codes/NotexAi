@@ -7,10 +7,10 @@ import { BookOpen, Star, FileText, Sparkles, List, ArrowUp } from "lucide-react"
 
 export default function Hero() {
 
-    const ease = [0.16, 1, 0.3, 1];
+    const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
     return (
-        <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-24 pb-4 md:pt-32 md:pb-8">
+        <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-10 pb-4 md:pt-32 md:pb-8">
             <div className="w-full max-w-4xl mx-auto text-center flex flex-col items-center">
 
                 {/* Headline: Clear Value Prop (PDF -> Notes) */}
@@ -21,12 +21,12 @@ export default function Hero() {
                     transition={{ duration: 0.8, ease, delay: 0.6 }}
                 >
                     <img
-                        className="w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-sm dark:brightness-100 dark:invert"
+                        className="w-52 md:w-80 h-auto dark:brightness-100 dark:invert -mb-5 md:-mb-10 z-10 relative"
                         src="logo.png"
                         alt="Notex AI Logo"
                     />
                     <h1 className="max-w-xs sm:max-w-xl md:max-w-2xl text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-cal-sans tracking-tighter text-zinc-900 dark:text-zinc-100 mt-1.5">
-                        PDF Summarizer
+                        Notes Simplified
                     </h1>
                 </motion.div>
 
@@ -53,12 +53,12 @@ export default function Hero() {
                         <div
                             data-slot="input-group"
                             role="group"
-                            className="group/input-group border-input dark:bg-input/30 relative flex w-full items-center rounded-xl border shadow-sm transition-[color,box-shadow] outline-none min-w-0 has-[>textarea]:h-auto flex-col has-[>textarea]:pb-2 has-[>textarea]:pt-2 focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px] bg-white dark:bg-[#1D1D1D]"
+                            className="group/input-group dark:bg-input/30 relative flex w-full items-center rounded-xl border-2 border-black dark:border-white shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#fff] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[1px_1px_0px_0px_#000] dark:hover:shadow-[1px_1px_0px_0px_#fff] outline-none min-w-0 has-[>textarea]:h-auto flex-col has-[>textarea]:pb-2 has-[>textarea]:pt-2 bg-white dark:bg-[#1D1D1D]"
                         >
                             <div className="contents">
                                 <textarea
                                     data-slot="input-group-control"
-                                    className="border-input placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive flex w-full text-base md:text-base transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50 flex-1 px-4 md:px-4 resize-none rounded-none border-0 bg-transparent py-2 shadow-none focus-visible:ring-0 dark:bg-transparent field-sizing-content max-h-36 min-h-[50px] md:min-h-[56px]"
+                                    className="border-input placeholder:text-muted-foreground flex w-full text-base md:text-base transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50 flex-1 px-4 md:px-4 resize-none rounded-none border-0 bg-transparent py-2 shadow-none focus-visible:ring-0 dark:bg-transparent field-sizing-content max-h-36 min-h-[50px] md:min-h-[56px]"
                                     name="message"
                                     placeholder="What would you like to know?"
                                 />
@@ -83,19 +83,19 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease, delay: 0.9 }}
                     >
-                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-zinc-200 dark:border-zinc-800 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
+                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-dashed border-zinc-500 dark:border-zinc-400 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
                             <FileText className="w-3 h-3 md:w-3.5 md:h-3.5 text-zinc-500" />
                             Detailed summary
                         </button>
-                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-zinc-200 dark:border-zinc-800 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
+                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-dashed border-zinc-500 dark:border-zinc-400 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
                             <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-zinc-500" />
                             Short summary
                         </button>
-                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-zinc-200 dark:border-zinc-800 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
+                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-dashed border-zinc-500 dark:border-zinc-400 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
                             <List className="w-3 h-3 md:w-3.5 md:h-3.5 text-zinc-500" />
                             Key points
                         </button>
-                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-zinc-200 dark:border-zinc-800 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
+                        <button className="flex items-center gap-1.5 px-3 py-1.5 md:px-3.5 md:py-1.5 bg-white dark:bg-[#1D1D1D] border border-dashed border-zinc-500 dark:border-zinc-400 rounded-full text-sm md:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors shadow-sm">
                             <BookOpen className="w-3 h-3 md:w-3.5 md:h-3.5 text-zinc-500" />
                             Create notes
                         </button>
