@@ -26,13 +26,13 @@ export function Header() {
     <>
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-2 md:p-6 pointer-events-none">
         <motion.header
-          className={`pointer-events-auto flex items-center justify-between gap-2 md:gap-6 px-3 py-2 md:px-6 md:py-3 rounded-full border transition-all duration-300 ${scrolled
-            ? "bg-white/70 dark:bg-[#1D1D1D]/70 backdrop-blur-xl border-black/10 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20 w-full max-w-[95%] md:w-auto"
+          className={`pointer-events-auto flex items-center justify-between gap-6 px-6 py-3 rounded-full border transition-all duration-300 ${scrolled
+            ? "bg-white/70 dark:bg-[#1D1D1D]/70 backdrop-blur-xl border-black/10 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-black/20 w-auto"
             : "bg-white/50 dark:bg-[#1D1D1D]/50 backdrop-blur-sm border-transparent w-full max-w-5xl"
             }`}
-          initial={{ opacity: 0, y: 0 }}
+          initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* 1. Logo (Left) */}
           <Link href="/" className="flex items-center gap-2 pr-1 md:pr-4">
@@ -61,15 +61,11 @@ export function Header() {
           {/* 3. Actions (Right) */}
           <div className="flex items-center gap-2 md:gap-3 pl-1 md:pl-4">
             {/* Theme Toggle */}
-            <div className="pointer-events-auto">
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
 
             {/* Sign In Button */}
-            <div className="pointer-events-auto">
-              <div className="[&_button]:rounded-full [&_button]:px-3 [&_button]:md:px-5 [&_button]:py-2 [&_button]:md:py-2.5 [&_button]:text-xs [&_button]:md:text-sm [&_button]:font-semibold [&_button]:bg-black [&_button]:dark:bg-white [&_button]:text-white [&_button]:dark:text-black [&_button]:hover:scale-105 [&_button]:transition-transform">
-                <SignInButton />
-              </div>
+            <div className="[&_button]:rounded-full [&_button]:px-3 [&_button]:md:px-5 [&_button]:py-2 [&_button]:md:py-2.5 [&_button]:text-xs [&_button]:md:text-sm [&_button]:font-semibold [&_button]:bg-black [&_button]:dark:bg-white [&_button]:text-white [&_button]:dark:text-black [&_button]:hover:scale-105 [&_button]:transition-transform">
+              <SignInButton />
             </div>
           </div>
         </motion.header>
